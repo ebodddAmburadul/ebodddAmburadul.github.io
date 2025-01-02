@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY ESPIAW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ultah.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="profile">
+            <img src="ESPIAW.jpg" alt="Profile Picture" class="profile-pic">
+            <span class="profile-name">ESPIAW</span>
+        </div>
+        <h3>FOR SELVIA VINATA</h3>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="container">
+            <!-- Slide 1 -->
+            <div id="firstScreen" class="first-screen">
+                <h1>HAI CAYANG, AKU EBOD AMBURADUL</h1>
+                <button id="nextButton1">Next</button>
+            </div>
+
+            <!-- Slide Show -->
+            <div id="slideShow" class="slideshow-container" style="display: none;">
+                <div class="mySlides">
+                    <h1>KALAU ESPIAW CUDAH BUKA WEBSITE INI BERARTI SUDAH TANGGAL 3 JANUARY YA, YIPPIEEE CELAMAT ULANG TAHUN CAYANGGGKUU</h1>
+                    <button id="nextButton2">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>CEMOGA DI UMUR ESPIAW YANG KE 20 TAHUN INI ESPIAW BISA MAKIN DEWASA, MAKIN SAYANG MAMA PAPA DAN MAKIN SAYANG JEBOD XIXI</h2>
+                    <button id="nextButton3">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>PANJANG UMUR SEHAT SELALU YAA SAYANG TUHAN YESUS SELALU MEMBERKATI KAMUU, RAJIN RAJIN YA KE GEREJA SAMA EBOD</h2>
+                    <button id="nextButton4">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>CEMOGA KULIAH KAMU JUGA SELALU DI LANCARKAN, SEMUA NILAI UTS TUGAS UAS BAGUS SEMUA, SKRIPSI JUGA AMAN JAYA, DAN LULUS TEPAT WAKTU YAA</h2>
+                    <button id="nextButton5">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>BIAR DI UMUR YANG KE 2O INI ESPIAW BISA MAKIN DEWASA, KURANG2IN NGAMBE NYA SAMA KERAS HATINYA KAMU PAS LAGI MARAH, MAKIN SABAR, MAKIN CANTIK, MAKIN PINTER</h2>
+                    <button id="nextButton6">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>JEBOD DOA IN SENANTIASA ESPIAW HIDUP ENA TANPA KEKURANGAN APAPUN, JEBODDD CAYANGGG BANGETT CAMA KAMUUU, JEBOD HARAP ESPIAW CUKA YA CAMA KADO DARI JEBOD</h2>
+                    <button id="nextButton7">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>EMANG BUKAN YANG MEWAH DAN MAHAL SI TAPI JEBOD BIKIN INI SEMUA DENGAN PENUH KASIH SAYANG</h2>
+                    <button id="nextButton8">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>CEKALI LAGI HAPPY BIRTHDAY YAA CAYANGGKUUUU, TUHAN YESUS MEMBERKATI KAMU CELALU</h2>
+                    <button id="nextButton9">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>JEBOD ALWAYSS SAYANG SAMA KAMU, I LOVE YOUU SO MUCH SAYANG</h2>
+                    <button id="nextButton10">Next</button>
+                </div>
+                <div class="mySlides">
+                    <h2>NIH ESPIAW SCAN YA ITU ADA VIDEO EBOD 💖</h2>
+                    <img src="barcode_.png" alt="Barcode" class="barcode">
+                </div>
+            </div>
+        </div>
+
+        <!-- Images on the sides -->
+        <div class="background-images">
+            <div class="left-background">
+                <img src="AMBURADUL.png" alt="Left Image" class="background-img-left">
+            </div>
+            <div class="right-background">
+                <img src="AMBURADUL.png" alt="Right Image" class="background-img-right">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ by Jebod</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        // Fungsi untuk menampilkan slide berikutnya
+        function showNextSlide() {
+            let slides = document.getElementsByClassName("mySlides");
+
+            // Menyembunyikan semua slide
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Menampilkan slide berikutnya
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1; // Jika sudah mencapai slide terakhir, kembali ke slide pertama
+            }
+
+            slides[slideIndex - 1].style.display = "block"; // Menampilkan slide sesuai dengan index
+        }
+
+        // Menampilkan slide show setelah tombol "Next" pertama diklik
+        document.getElementById('nextButton1').onclick = function() {
+            document.getElementById('firstScreen').style.display = 'none'; // Menyembunyikan tampilan pertama
+            document.getElementById('slideShow').style.display = 'block'; // Menampilkan slide show
+            showNextSlide();  // Mulai slide pertama
+        };
+
+        // Tambahkan event listener untuk semua tombol Next di slide
+        const nextButtons = document.querySelectorAll('.mySlides button');
+        nextButtons.forEach(button => {
+            button.onclick = showNextSlide;
+        });
+    </script>
+</body>
+</html>

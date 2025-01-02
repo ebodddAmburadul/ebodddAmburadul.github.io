@@ -1,0 +1,218 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #904faa, #69417a, #ba55d3);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Background Pattern */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/DiagonalStripes.png') rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #8A2BE2, #6A1B9A);
+    padding: 20px 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile-pic {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    color: white;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #9676b4, #6A1B9A);
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer p {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    overflow: hidden;
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Slide Show */
+.first-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #000;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 20px 0;
+    padding: 0 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+button {
+    padding: 16px 32px;
+    background-color: #782c8f;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #6A1B9A;
+    transform: translateY(-5px);
+}
+
+/* Slide Show Container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Images on the sides */
+.background-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.left-background, .right-background {
+    width: 10%;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-background img, .right-background img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+    button {
+        font-size: 1.1em;
+        padding: 14px 28px;
+    }
+}
